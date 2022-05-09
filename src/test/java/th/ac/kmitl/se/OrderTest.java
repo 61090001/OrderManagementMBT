@@ -18,12 +18,12 @@ class OrderTest {
     public void testMBT() throws java.io.IOException {
         TestExecutor executor = new TestExecutor(OrderAdapter.class);
         Context context = executor.getMachine().getCurrentContext();
-        context.setPathGenerator(new RandomPath(new EdgeCoverage(50)));
+        context.setPathGenerator(new RandomPath(new EdgeCoverage(100)));
 
         /* Uncomment the following three lines to enable GraphWalker player */
-        //OrderAdapter.delay = 500;
-        //WebSocketServer server = new WebSocketServer(8887, executor.getMachine());
-        //server.start();
+//        OrderAdapter.delay = 500;
+//        WebSocketServer server = new WebSocketServer(8887, executor.getMachine());
+//        server.start();
 
         Result result = executor.execute(true);
         if (result.hasErrors()) {
